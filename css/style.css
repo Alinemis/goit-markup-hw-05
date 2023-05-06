@@ -9,6 +9,8 @@
   --acent-bg-icon: #31d0aa;
   --customers-color: rgba(142, 143, 153, 1);
   --customers-link: #8e8f99;
+  --duration: 250ms;
+  --cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -91,6 +93,21 @@ img {
   letter-spacing: 0.04em;
 }
 
+/* icons */
+
+.icon-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  background-color: var(--btn--logo-color);
+  transition: background-color var(--duration) var(--cubic-bezier);
+}
+
 /* Header */
 .header {
   border-bottom: 1px solid var(--border);
@@ -134,6 +151,8 @@ img {
 
   color: var(--secondary-text-color);
   font-weight: 500;
+
+  transition: color var(--duration) var(--cubic-bezier);
 }
 
 .header-link:hover,
@@ -175,6 +194,8 @@ img {
   padding-bottom: 24px;
 
   color: var(--primary-text-color);
+
+  transition: color var(--duration) var(--cubic-bezier);
 }
 
 /* main */
@@ -225,11 +246,13 @@ img {
   min-width: 169px;
   height: 56px;
   border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
   background: var(--btn--logo-color);
   color: var(--white-color);
 
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color var(--duration) var(--cubic-bezier),
+    box-shadow var(--duration) var(--cubic-bezier);
 }
 
 .hero-button:hover,
@@ -355,18 +378,6 @@ img {
   align-items: center;
 }
 
-.icon-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-
-  background-color: var(--btn--logo-color);
-}
-
 .social-icon {
   fill: var(--light-color);
 }
@@ -414,6 +425,9 @@ img {
   border-radius: 4px;
 
   color: var(--customers-link);
+  transition: color var(--duration) var(--cubic-bezier),
+    border var(--duration) var(--cubic-bezier),
+    border-radius var(--duration) var(--cubic-bezier);
 }
 
 .customers-link:hover,
@@ -431,6 +445,7 @@ img {
 }
 
 /* footer */
+
 .footer-conteiner {
   display: flex;
   align-items: baseline;
@@ -505,6 +520,11 @@ img {
 
   background-color: var(--light-color);
   color: var(--btn--logo-color);
+
+  transition: background-color var(--duration) var(--cubic-bezier),
+    color var(--duration) var(--cubic-bezier),
+    border var(--duration) var(--cubic-bezier),
+    box-shadow var(--duration) var(--cubic-bezier);
 }
 
 .portfolio-btn:hover,
