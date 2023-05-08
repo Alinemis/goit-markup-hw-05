@@ -555,6 +555,9 @@ img {
   flex-basis: calc((100% - 48px) / 3);
 }
 
+.portfolio-item:hover {
+}
+
 .portfolio-link {
   display: block;
 }
@@ -569,6 +572,7 @@ img {
 
 .portfolio-thumb {
   position: relative;
+  overflow: hidden;
 }
 
 .overlay {
@@ -580,7 +584,17 @@ img {
   padding: 40px 32px;
 
   background-color: var(--btn--logo-color);
-  display: none;
+
+  transform: translatey(100%);
+  transition: transform var(--duration) var(--cubic-bezier);
+}
+
+.portfolio-item:hover .overlay {
+  transform: translateY(0%);
+}
+
+.portfolio-link:focus .overlay {
+  transform: translateY(0%);
 }
 
 .hover-text {
@@ -622,25 +636,24 @@ img {
   left: 0px;
   top: 0px;
 
+  background-color: rgba(46, 47, 66, 0.4);
+
   transition: opacity var(--duration) var(--cubic-bezier),
     visibility var(--duration) var(--cubic-bezier);
   z-index: 100;
-
-  background-color: rgba(46, 47, 66, 0.4);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition-delay: 350ms;
+  transition-delay: 600ms;
 }
 
 .modal {
   position: absolute;
   top: calc(50%);
   left: calc(50%);
-  transform: translate(-50%, -50%);
 
   width: 408px;
   height: 584px;
@@ -651,15 +664,15 @@ img {
 
   background-color: #fcfcfc;
 
+  transform: translate(-50%, -50%);
   transition: opacity var(--duration) var(--cubic-bezier),
-    transform var(--duration) var(--cubic-bezier);
-  transition-delay: 350ms;
+    transform 400ms cubic-bezier(0.17, 0.67, 0.88, 0.5);
+  transition-delay: var(--duration);
 }
 
 .backdrop.is-hidden .modal {
   opacity: 0;
-  transform: scale(1.75);
-  transition-delay: 0ms;
+  transform: perspective(600px) translate(-50%, -70%) rotatex(60deg);
 }
 
 .modal-close-button {
