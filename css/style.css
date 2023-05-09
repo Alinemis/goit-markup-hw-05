@@ -642,7 +642,6 @@ img {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition-delay: 600ms;
 }
 
 .modal {
@@ -700,7 +699,7 @@ img {
   transition: fill var(--duration) var(--cubic-bezier);
 }
 
-.modal-close-button .modal-icon:hover,
-.modal-close-button .modal-icon:focus {
+.modal-icon:hover,
+.modal-icon:focus {
   fill: var(--white-color);
 }
