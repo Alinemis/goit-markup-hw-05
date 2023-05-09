@@ -682,6 +682,7 @@ img {
   border-radius: 50%;
   cursor: pointer;
 
+  color: var(--secondary-text-color);
   background-color: var(--border);
 
   transition: background-color var(--duration) var(--cubic-bezier),
@@ -692,14 +693,10 @@ img {
 .modal-close-button:focus {
   background-color: var(--acent-color);
   border: none;
+  color: var(--white-color);
 }
 
 .modal-icon {
-  fill: var(--secondary-text-color);
+  fill: currentColor;
   transition: fill var(--duration) var(--cubic-bezier);
-}
-
-.modal-close-button:hover .modal-icon:hover,
-.modal-close-button:focus .modal-icon:focus {
-  fill: var(--white-color);
 }
