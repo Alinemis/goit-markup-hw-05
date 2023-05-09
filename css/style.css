@@ -147,11 +147,8 @@ img {
   gap: 40px;
 }
 
-.header-item {
-  position: relative;
-}
-
 .header-link {
+  position: relative;
   display: block;
   padding-top: 24px;
   padding-bottom: 24px;
@@ -160,6 +157,9 @@ img {
   font-weight: 500;
 
   transition: color var(--duration) var(--cubic-bezier);
+}
+.header-link-portfolio {
+  color: var(--acent-color);
 }
 
 .header-link:hover,
