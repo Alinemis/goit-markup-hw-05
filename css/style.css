@@ -149,6 +149,7 @@ img {
 
 .header-item {
   position: relative;
+  bottom: -1px;
 }
 
 .header-link {
@@ -258,8 +259,7 @@ img {
   background: var(--btn--logo-color);
   color: var(--white-color);
 
-  transition: background-color var(--duration) var(--cubic-bezier),
-    box-shadow var(--duration) var(--cubic-bezier);
+  transition: background-color var(--duration) var(--cubic-bezier);
 }
 
 .hero-button:hover,
@@ -433,8 +433,7 @@ img {
 
   color: var(--customers-link);
   transition: color var(--duration) var(--cubic-bezier),
-    border var(--duration) var(--cubic-bezier),
-    border-radius var(--duration) var(--cubic-bezier);
+    border var(--duration) var(--cubic-bezier);
 }
 
 .customers-link:hover,
@@ -518,6 +517,11 @@ img {
 
 .portfolio-item-btn {
   border-radius: 4px;
+
+  transition: background-color var(--duration) var(--cubic-bezier),
+    color var(--duration) var(--cubic-bezier),
+    border var(--duration) var(--cubic-bezier),
+    box-shadow var(--duration) var(--cubic-bezier);
 }
 
 .portfolio-btn {
@@ -527,11 +531,6 @@ img {
 
   background-color: var(--light-color);
   color: var(--btn--logo-color);
-
-  transition: background-color var(--duration) var(--cubic-bezier),
-    color var(--duration) var(--cubic-bezier),
-    border var(--duration) var(--cubic-bezier),
-    box-shadow var(--duration) var(--cubic-bezier);
 }
 
 .portfolio-btn:hover,
@@ -560,6 +559,7 @@ img {
 
 .portfolio-link {
   display: block;
+  transition: box-shadow var(--duration) var(--cubic-bezier);
 }
 
 .portfolio-link:hover,
@@ -568,6 +568,10 @@ img {
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
+.portfolio-link:hover .hover-text,
+.portfolio-link:focus .hover-text {
+  transform: translateY(0%);
+}
 /* overlay */
 
 .portfolio-thumb {
@@ -581,12 +585,6 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 40px 32px;
-
-  background-color: var(--btn--logo-color);
-
-  transform: translatey(100%);
-  transition: transform var(--duration) var(--cubic-bezier);
 }
 
 .portfolio-item:hover .overlay {
@@ -599,11 +597,17 @@ img {
 
 .hover-text {
   position: absolute;
-  width: 296px;
-  height: 96px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px 32px;
+  letter-spacing: 0.02em;
 
   color: var(--light-color);
-  letter-spacing: 0.02em;
+  background-color: var(--btn--logo-color);
+
+  transform: translateY(100%);
+  transition: transform var(--duration) var(--cubic-bezier);
 }
 
 .inform-portfolio {
@@ -656,7 +660,7 @@ img {
   left: calc(50%);
 
   width: 408px;
-  height: 584px;
+  min-height: 576px;
   padding: 24px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -664,9 +668,9 @@ img {
 
   background-color: #fcfcfc;
 
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   transition: opacity var(--duration) var(--cubic-bezier),
-    transform 400ms cubic-bezier(0.17, 0.67, 0.88, 0.5);
+    transform var(--duration) var(--cubic-bezier);
   transition-delay: var(--duration);
 }
 
@@ -691,8 +695,23 @@ img {
   cursor: pointer;
 
   background-color: var(--border);
+
+  transition: background-color var(--duration) var(--cubic-bezier),
+    border var(--duration) var(--cubic-bezier);
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+  background-color: var(--acent-color);
+  border: none;
 }
 
 .modal-icon {
   fill: var(--secondary-text-color);
+  transition: fill var(--duration) var(--cubic-bezier);
+}
+
+.modal-icon:hover,
+.modal-icon:focus {
+  fill: var(--white-color);
 }
