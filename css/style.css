@@ -696,10 +696,10 @@ img {
 
 .modal-icon {
   fill: var(--secondary-text-color);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--duration) var(--cubic-bezier);
 }
 
-.modal-icon:hover,
-.modal-icon:focus {
+.modal-close-button:hover .modal-icon:hover,
+.modal-close-button:focus .modal-icon:focus {
   fill: var(--white-color);
 }
