@@ -149,7 +149,6 @@ img {
 
 .header-item {
   position: relative;
-  bottom: -1px;
 }
 
 .header-link {
@@ -178,7 +177,7 @@ img {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -1px;
 
   width: 100%;
   height: 4px;
@@ -433,7 +432,7 @@ img {
 
   color: var(--customers-link);
   transition: color var(--duration) var(--cubic-bezier),
-    border var(--duration) var(--cubic-bezier);
+    border-color var(--duration) var(--cubic-bezier);
 }
 
 .customers-link:hover,
@@ -579,14 +578,6 @@ img {
   overflow: hidden;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 .portfolio-item:hover .overlay {
   transform: translateY(0%);
 }
@@ -595,9 +586,10 @@ img {
   transform: translateY(0%);
 }
 
-.hover-text {
+.overlay {
   position: absolute;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   padding: 40px 32px;
@@ -711,7 +703,7 @@ img {
   transition: fill var(--duration) var(--cubic-bezier);
 }
 
-.modal-icon:hover,
-.modal-icon:focus {
+.modal-close-button .modal-icon:hover,
+.modal-close-button .modal-icon:focus {
   fill: var(--white-color);
 }
